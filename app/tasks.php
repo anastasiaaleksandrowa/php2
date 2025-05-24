@@ -89,3 +89,37 @@ function power($val, $pow) {
 echo "\n=== Возведение в степень ===\n";
 echo "2^3 = ", power(2,3), "\n"; 
 echo "5^-2 = ", power(5,-2), "\n"; 
+// 6. задача
+function getTimeWithDeclension() {
+    date_default_timezone_set('Europe/Moscow'); 
+    
+    $hour = (int)date('G');   
+    $minute = (int)date('i'); 
+    
+    function declOfNum($number, array $titles) {
+        if ($number % 100 >= 11 && $number % 100 <= 14) {
+            return $titles[2];
+        } else {
+            switch ($number % 10) {
+                case 1:
+                    return $titles[0];
+                case 2:
+                case 3:
+                case 4:
+                    return $titles[1];
+                default:
+                    return $titles[2];
+            }
+        }
+    }
+
+   $hourWord = declOfNum($hour, ['час', 'часа', 'часов']);
+   $minuteWord = declOfNum($minute, ['минута', 'минуты', 'минут']);
+
+   return "$hour {$hourWord} {$minute} {$minuteWord}";
+}
+
+echo "\n=== Текущее время с склонениями ===\n";
+echo getTimeWithDeclension(), "\n";
+
+?>
