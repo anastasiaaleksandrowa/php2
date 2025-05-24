@@ -75,3 +75,17 @@ function transliterateString($str) {
 
 echo "\n=== Транслитерация строки ===\n";
 echo transliterateString("Привет мир!"), "\n";
+// 5. задача
+function power($val, $pow) {
+    if ($pow == 0) {
+        return 1;
+    } elseif ($pow < 0) {
+        return 1 / power($val, -$pow);
+    } else {
+        return $val * power($val, $pow - 1);
+    }
+}
+
+echo "\n=== Возведение в степень ===\n";
+echo "2^3 = ", power(2,3), "\n"; 
+echo "5^-2 = ", power(5,-2), "\n"; 
