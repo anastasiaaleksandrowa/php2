@@ -17,3 +17,18 @@ function calculate($a, $b, $operation) {
             return "Неизвестная операция";
     }
 }
+// 2. задача
+function mathOperation($arg1, $arg2, $operation) {
+    switch ($operation) {
+        case 'add':
+            return calculate($arg1, $arg2, '+');
+        case 'subtract':
+            return calculate($arg1, $arg2, '-');
+        case 'multiply':
+            return calculate($arg1, $arg2, '*');
+        case 'divide':
+            return calculate($arg1, $arg2, '/');
+        default:
+            return "Неизвестная операция";
+    }
+}
